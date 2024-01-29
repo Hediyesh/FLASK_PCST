@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PCST result</title>
+       <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: #e3f2fd;
+}
+ table, th, td{
+    border: 1px solid black
+ }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg" style="justify-content:center;background-color:black">
+    <a class="navbar-brand" style="text-align:center" href="#"><h4 style="color:white">Prize Collecting Steiner Tree Algorithm</h4></a>
+</nav>
+<br>
+<!-- show result -->
+ <div class="row">
+     <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+     <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10">
+         <div class="res">
+             <div class="card-header bg-primary text-white"><h3>Result</h3></div>
+             <div id="res" class="card-body" style="background-color:white">
+                 <div class="panel panel-primary">
+                     <div>
+                         {{ result.table_html | safe }}
+                     </div>
+<!--                     <div id="objective">-->
+<!--                            {{ result.Objective }} &lt;!&ndash; Use | safe to render HTML as raw HTML &ndash;&gt;-->
+<!--                     </div>-->
+<!--                     <p>{{ result.costs }} </p>-->
+<!--                     <p>{{ result.penalty }} </p>-->
+                     <div id="graph-container">
+                        {% if result %}
+                            {{ result.li_img | safe }} <!-- Use | safe to render HTML as raw HTML -->
+                        {% endif %}
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+ </div>
+</body>
+</html>
